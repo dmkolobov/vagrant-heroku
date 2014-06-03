@@ -1,6 +1,6 @@
 This is a [veewee](https://github.com/jedi4ever/veewee) template for building a
 [Vagrant](http://vagrantup.com/) box that closely mirrors the heroku Cedar stack. You can build it
-yourself by following the directions below or install a prebuilt version from [here](http://dl.dropbox.com/u/1906634/heroku.box).
+yourself by following the directions below.
 
 ## Easy Install
 
