@@ -88,16 +88,6 @@ su -c '/usr/bin/pg_ctl start -l /var/pgsql/data/log/logfile -D /var/pgsql/data' 
 sed -i -e 's/exit 0//g' /etc/rc.local
 echo "su -c '/usr/bin/pg_ctl start -l /var/pgsql/data/log/logfile -D /var/pgsql/data' postgres" >> /etc/rc.local
 
-# Install NodeJs for a JavaScript runtime
-git clone https://github.com/joyent/node.git
-cd node
-git checkout v0.4.7
-./configure --prefix=/usr
-make
-make install
-cd ..
-rm -rf node*
-
 # Add /opt/ruby/bin to the global path as the last resort so
 # Ruby, RubyGems, and Chef/Puppet are visible
 echo 'PATH=$PATH:/opt/ruby/bin' > /etc/profile.d/vagrantruby.sh
@@ -142,6 +132,17 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 apt-get -y install libxml2-dev libxslt-dev curl libcurl4-openssl-dev
 apt-get -y install imagemagick libmagickcore-dev libmagickwand-dev
 apt-get clean
+
+# Install NodeJs for a JavaScript runtime
+echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
+export PATH=$HOME/local/bin:$PATH
+mkdir ~/local
+mkdir ~/node-latest-install
+cd ~/node-latest-install
+curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
+./configure --prefix=~/local
+make install 
+curl https://www.npmjs.org/install.sh | sh
 
 # Set locale
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale

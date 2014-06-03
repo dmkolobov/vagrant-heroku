@@ -61,5 +61,6 @@ the Celadon Cedar stack.
 * RubyGems 2.0.3
 * Python with pip, virtualenv, and virtualenvwrapper
 * PostgreSQL 9.2.4
-* NodeJS 0.4.7
+* NodeJS latest
+* NPM latest
 * Foreman https://github.com/ddollar/foreman
