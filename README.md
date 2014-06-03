@@ -4,18 +4,7 @@ yourself by following the directions below or install a prebuilt version from [h
 
 ## Easy Install
 
-Add the following to your `Vagrantfile`.
-
-```ruby
-Vagrant::Config.run do |config|
-  config.vm.box = "heroku"
-  config.vm.box_url = "https://dl.dropboxusercontent.com/s/rnc0p8zl91borei/heroku.box"
-end
-```
-
-And run `vagrant up`. The box will be downloaded and imported for you.
-
-This box was last updated 8/19/13.  For the latest changes, please follow the instructions below.
+I do not plan to maintain a publically available version of this box. Therefore, there is no easy install and you should proceed to the next step.
 
 ## Building From Scratch
 
@@ -49,6 +38,16 @@ Now all you have to do is setup vagrant in your project.
 $ vagrant init heroku
 $ vagrant up
 $ vagrant ssh
+```
+
+If you wish to skip these steps in the future, upload `heroku.box` to 
+the cloud manager of your choice, and add the following to your `Vagrantfile`.
+
+```ruby
+Vagrant::Config.run do |config|
+  config.vm.box = "heroku"
+  config.vm.box_url = "<YOUR BOX URL>"
+end
 ```
 
 ## Included Packages
