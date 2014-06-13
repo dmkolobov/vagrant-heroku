@@ -144,6 +144,14 @@ curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
 make install 
 curl https://www.npmjs.org/install.sh | sh
 
+# Install grunt task runner
+
+npm install -g grunt-cli 
+
+# Own the NPM directory
+
+chown -R vagrant /home/vagrant/.npm
+
 # Set locale
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 
